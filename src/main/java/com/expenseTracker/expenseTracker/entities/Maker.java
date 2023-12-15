@@ -1,6 +1,5 @@
 package com.expenseTracker.expenseTracker.entities;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -34,5 +33,5 @@ public class Maker {
 
     @OneToMany(mappedBy = "whomakethis", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JsonIgnore
-    private List<Product> productList = new ArrayList<>();
+    private List<Product> productList;
 }

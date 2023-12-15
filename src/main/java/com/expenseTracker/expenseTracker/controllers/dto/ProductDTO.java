@@ -20,6 +20,10 @@ public class ProductDTO {
     private Maker maker;
 
     public boolean isValidDTO(ProductDTO productDTO) {
+        if (productDTO.getName() == null || productDTO.getName().isBlank() || productDTO.getPrice() == null
+                || productDTO.getMaker() == null) {
+            return false;
+        }
         return true;
     }
 }

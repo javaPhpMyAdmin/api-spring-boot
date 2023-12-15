@@ -66,7 +66,7 @@ public class ProductController {
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody ProductDTO productDTO) throws URISyntaxException {
 
-        if (productDTO.getName().isBlank() || productDTO.getPrice() != null || productDTO.getMaker() != null) {
+        if (!productDTO.isValidDTO(productDTO)) {
             return ResponseEntity.badRequest().build();
         }
         Product productFormatted = Product.builder()
